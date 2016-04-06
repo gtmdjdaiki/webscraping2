@@ -7,15 +7,19 @@
 
 import sys
 
-URL1 = "https://eservice.fujitsu.com/supportdesk/oss/search/jfns/jfns"
-URL2 = ".html"
-FNAME = sys.argv[1]
-LINE = sys.argv[2]
+def main():
+    URL1 = "https://eservice.fujitsu.com/supportdesk/oss/search/jfns/jfns"
+    URL2 = ".html"
+    args = sys.argv
+    arglen = len(args)
 
-FLIST =  open (FNAME)
-FNS =  FLIST.readlines()[int(LINE)]
-print URL1+FNS[4:9]+URL2,
-FLIST.close
+    if (arglen != 3):
+        print "Usage: Python %s filename linenumber" %args[0]
+        quit()
 
+    with open (args[1]) as FLIST:
+        FNS =  FLIST.readlines()[int(args[2])]
+        print URL1+FNS[4:9]+URL2
 
-
+if __name__ == '__main__':
+    main()
