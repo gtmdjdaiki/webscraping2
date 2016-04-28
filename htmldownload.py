@@ -31,14 +31,14 @@ import urllib2
 import os
 
 #取得したいファイル名をURLで指定
-url="http://url.html"
+url="http://requests-docs-ja.readthedocs.org/en/latest/user/advanced/#proxies"
 
 #保存先となるディレクトリをファイル名まで指定
-fout=file("/tmp/test.html","wb")
+fout=file("pyhtmldownload.html","wb")
 
 
 #プロキシ設定
-proxies={"http":"http://user:passwd@127.0.0.1:8080"}
+proxies={"http":"http://U572849:tmdj1603@127.0.0.1:8080"}
 proxyHandler=urllib2.ProxyHandler(proxies)
 opener=urllib2.build_opener(proxyHandler)
 urllib2.install_opener(opener)
